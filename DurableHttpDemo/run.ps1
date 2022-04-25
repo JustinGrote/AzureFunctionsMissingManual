@@ -1,9 +1,8 @@
 using namespace System.Net
 
-param($Request, $TriggerMetadata)
+param([HttpRequestContext]$Request, $TriggerMetadata)
 
-$FunctionName = $Request.Params.FunctionName
-$InstanceId = Start-DurableOrchestration -FunctionName $FunctionName
+$InstanceId = Start-DurableOrchestration -FunctionName 'CreateUserOrchestrator'
 Write-Host "Started orchestration with ID = '$InstanceId'"
 
 $Response = New-DurableOrchestrationCheckStatusResponse -Request $Request -InstanceId $InstanceId

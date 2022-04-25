@@ -1,4 +1,6 @@
 {
+  "scriptFile": "../AzureFunctionsMissingManual.psm1",
+  "entryPoint": "CreateUser",
   "bindings": [
     {
       "name": "name",
