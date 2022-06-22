@@ -1,6 +1,9 @@
 Describe 'CreateUser' -Tag Integration {
+    BeforeAll {
+        Import-Module $PSScriptRoot/../AzureFunctionsMissingManual.psm1 -Force
+    }
     It 'Works with <Name>' {
-        . $PSScriptRoot/../CreateUser/run.ps1 -Name $Name
+        CreateUser -Name $Name
         | Select-Object -Last 1
         | Should -BeLike "$Name completed!*"
     } -TestCases @(
