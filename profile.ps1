@@ -16,7 +16,7 @@
 #     Connect-AzAccount -Identity
 # }
 
-Import-Module AzureFunctionsHelpers
+# Import-Module AzureFunctionsHelpers
 
 # Uncomment the next line to enable legacy AzureRm alias in Azure PowerShell.
 # Enable-AzureRmAlias
